@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hsar-deployment
+  labels:
+    app: hsar-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: hsar-deployment
+  template:
+    metadata:
+      labels:
+        app: hsar-deployment
+    spec:
+      containers:
+      - name: hsar-deployment
+        image: abhi137jain/project-2:latest
+        ports:
+        - containerPort: 80
